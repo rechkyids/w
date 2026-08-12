@@ -1,147 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Contact Me</title>
 
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-    <script>
-        emailjs.init({
-            publicKey: "d2qtMLP2W8dQh0WOk"
-        });
-    </script>
 </head>
 
 <body>
 
     <h1>Contact Me</h1>
 
+    <!-- Navigation Menu -->
+
     <nav>
+
         <a href="index.html">Home</a> |
+
         <a href="about.html">About Me</a> |
+
         <a href="hobbies.html">Hobbies</a> |
+
         <a href="favorites.html">Favorites</a> |
+
         <a href="goals.html">Goals</a> |
+
         <a href="contact.html">Contact Me</a>
+
     </nav>
 
     <hr>
 
-    <form id="contact-form">
+    <!-- Back and Next -->
 
-        <!-- Name -->
-        <label for="name">Full Name:</label>
-        <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            required
-        >
+    <p>
+
+        <a href="goals.html">← Back</a> |
+
+        <a href="index.html">Next →</a>
+
+    </p>
+
+    <h2>Contact Me Form</h2>
+
+    <p>
+
+        Please fill out the form below if you would like
+
+        to send me information, feedback, or an inquiry.
+
+    </p>
+
+    <form>
+
+        <!-- Full Name -->
+
+        <label for="fullname">Full Name:</label><br>
+
+        <input type="text" id="fullname" name="fullname">
 
         <br><br>
 
-        <!-- Gmail -->
-        <label for="email">Gmail:</label>
-        <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your Gmail"
-            required
-        >
+        <!-- Email -->
+
+        <label for="email">Email Address:</label><br>
+
+        <input type="email" id="email" name="email">
 
         <br><br>
 
         <!-- Gender -->
-        <label>Gender:</label>
-        <br>
 
-        <input type="radio" id="male" name="gender" value="Male" required>
+        <label>Gender:</label><br>
+
+        <input type="radio"
+
+               id="male"
+
+               name="gender"
+
+               value="Male">
+
         <label for="male">Male</label>
 
-        <input type="radio" id="female" name="gender" value="Female">
+        <input type="radio"
+
+               id="female"
+
+               name="gender"
+
+               value="Female">
+
         <label for="female">Female</label>
-
-        <input type="radio" id="gay" name="gender" value="Gay">
-        <label for="gay">Gay</label>
-
-        <input type="radio" id="lesbian" name="gender" value="Lesbian">
-        <label for="lesbian">Lesbian</label>
-
-        <input type="radio" id="other" name="gender" value="Other">
-        <label for="other">Other</label>
 
         <br><br>
 
-        <!-- Strand -->
-        <label for="strand">Strand:</label>
+        <!-- Interests -->
 
-        <select id="strand" name="strand" required>
-            <option value="">Select Strand</option>
-            <option value="ICT">ICT</option>
-            <option value="STEM">STEM</option>
-            <option value="ABM">ABM</option>
-            <option value="GAS">GAS</option>
-            <option value="HUMSS">HUMSS</option>
+        <label>Interests:</label><br>
+
+        <input type="checkbox"
+
+               id="technology"
+
+               name="interests"
+
+               value="Technology">
+
+        <label for="technology">Technology</label>
+
+        <br>
+
+        <input type="checkbox"
+
+               id="gaming"
+
+               name="interests"
+
+               value="Gaming">
+
+        <label for="gaming">Gaming</label>
+
+        <br>
+
+        <input type="checkbox"
+
+               id="music"
+
+               name="interests"
+
+               value="Music">
+
+        <label for="music">Music</label>
+
+        <br>
+
+        <input type="checkbox"
+
+               id="cooking"
+
+               name="interests"
+
+               value="Cooking">
+
+        <label for="cooking">Cooking</label>
+
+        <br><br>
+
+        <!-- Purpose of Visit -->
+
+        <label for="purpose">Purpose of Visit:</label><br>
+
+        <select id="purpose" name="purpose">
+
+            <option value="General Inquiry">General Inquiry</option>
+
+            <option value="Feedback">Feedback</option>
+
+            <option value="Collaboration">Collaboration</option>
+
+            <option value="School Project">School Project</option>
+
         </select>
 
         <br><br>
 
         <!-- Message -->
-        <label for="message">Message:</label>
-        <br>
+
+        <label for="message">Message:</label><br>
 
         <textarea
+
             id="message"
+
             name="message"
+
             rows="5"
-            cols="50"
-            placeholder="Type your message here..."
-            required
-        ></textarea>
+
+            cols="40"></textarea>
 
         <br><br>
 
-        <button type="submit">Send Message</button>
-        <button type="reset">Clear Form</button>
+        <!-- Buttons -->
+
+        <input type="submit" value="Send Message">
+
+        <input type="reset" value="Clear Form">
 
     </form>
 
-    <script>
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
+    <hr>
 
-            event.preventDefault();
+    <p>
 
-            emailjs.sendForm(
-                "service_pjh0uuc",
-                "template_hwwchig",
-                this
-            )
-            .then(function() {
+        <a href="index.html">← Return to Home</a>
 
-                alert("Message sent successfully!");
-
-                document.getElementById("contact-form").reset();
-
-            })
-            .catch(function(error) {
-
-                alert("Message failed to send. Please try again.");
-
-                console.error("EmailJS Error:", error);
-
-            });
-
-        });
-    </script>
+    </p>
 
 </body>
 
 </html>
-
