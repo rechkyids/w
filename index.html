@@ -1,240 +1,145 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Rich Law S. Bargamento - Multimedia Profile</title>
+    <title>Contact Me</title>
 
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        emailjs.init({
+            publicKey: "d2qtMLP2W8dQh0WOk"
+        });
+    </script>
 </head>
 
 <body>
 
-    <h1>Rich Law S. Bargamento</h1>
+    <h1>Contact Me</h1>
 
-    <h2>Personal Information</h2>
-
-    <p>
-
-        My name is Rich Law S. Bargamento.<br>
-
-        I am a Grade 11 ICT student.<br>
-
-        My birthday is on June 23.
-
-    </p>
-
-    <img src="profile.jpg"
-
-    alt="My Profile Picture"
-
-    width="250">
-
-    <p>
-
-        This image represents me as a learner and future programmer.
-
-    </p>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About Me</a> |
+        <a href="hobbies.html">Hobbies</a> |
+        <a href="favorites.html">Favorites</a> |
+        <a href="goals.html">Goals</a> |
+        <a href="contact.html">Contact Me</a>
+    </nav>
 
     <hr>
 
-    <h2>About Me</h2>
+    <form id="contact-form">
 
-    <p>
+        <!-- Name -->
+        <label for="name">Full Name:</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+        >
 
-        I always try to improve my coding skills because I want to become a
+        <br><br>
 
-        successful programmer someday. I enjoy learning new things and
+        <!-- Gmail -->
+        <label for="email">Gmail:</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your Gmail"
+            required
+        >
 
-        discovering more about technology. I believe that hard work,
+        <br><br>
 
-        determination, and patience will help me achieve my dreams.
+        <!-- Gender -->
+        <label>Gender:</label>
+        <br>
 
-    </p>
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label>
 
-    <h2>My Hobbies and Interests</h2>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
 
-    <p>
+        <input type="radio" id="gay" name="gender" value="Gay">
+        <label for="gay">Gay</label>
 
-        These are some of the hobbies and interests that describe me:
+        <input type="radio" id="lesbian" name="gender" value="Lesbian">
+        <label for="lesbian">Lesbian</label>
 
-    </p>
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label>
 
-    <ul>
+        <br><br>
 
-        <li>Playing online games</li>
+        <!-- Strand -->
+        <label for="strand">Strand:</label>
 
-        <li>Dancing</li>
+        <select id="strand" name="strand" required>
+            <option value="">Select Strand</option>
+            <option value="ICT">ICT</option>
+            <option value="STEM">STEM</option>
+            <option value="ABM">ABM</option>
+            <option value="GAS">GAS</option>
+            <option value="HUMSS">HUMSS</option>
+        </select>
 
-        <li>Singing</li>
+        <br><br>
 
-        <li>Cooking</li>
+        <!-- Message -->
+        <label for="message">Message:</label>
+        <br>
 
-    </ul>
+        <textarea
+            id="message"
+            name="message"
+            rows="5"
+            cols="50"
+            placeholder="Type your message here..."
+            required
+        ></textarea>
 
-    <video width="400" controls>
+        <br><br>
 
-        <source src="fab930ea-669c-40bd-88a6-5ba9c9722a7f.mp4" type="video/mp4">
+        <button type="submit">Send Message</button>
+        <button type="reset">Clear Form</button>
 
-    </video>
+    </form>
 
-    <p>
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
 
-        This video is related to my hobbies and interests because it represents
+            event.preventDefault();
 
-        one of the activities that I enjoy during my free time.
+            emailjs.sendForm(
+                "service_pjh0uuc",
+                "template_hwwchig",
+                this
+            )
+            .then(function() {
 
-    </p>
+                alert("Message sent successfully!");
 
-    <h2>My Top 5 Favorite Foods</h2>
+                document.getElementById("contact-form").reset();
 
-    <p>
+            })
+            .catch(function(error) {
 
-        Below are my top five favorite foods:
+                alert("Message failed to send. Please try again.");
 
-    </p>
+                console.error("EmailJS Error:", error);
 
-    <ol type="A">
+            });
 
-        <li>Cakes</li>
-
-        <li>Lechon</li>
-
-        <li>Cotton Candy</li>
-
-        <li>Chocolates</li>
-
-        <li>Yogurt</li>
-
-    </ol>
-
-    <h2>My Favorite Things</h2>
-
-    <p>
-
-        I like to sleep, I love the color <b>pink</b>, and I especially
-
-        <b>love cats</b>.
-
-    </p>
-
-    <audio controls>
-
-        <source src="favoritesong.mp3" type="audio/mpeg">
-
-    </audio>
-
-    <p>
-
-        This audio represents one of my favorite songs that helps me relax
-
-        and stay motivated.
-
-    </p>
-
-    <hr>
-
-    <h2>My Educational Goals</h2>
-
-    <p>
-
-        These are some of my educational goals as a learner:
-
-    </p>
-
-    <ol>
-
-        <li>Improve my coding skills.</li>
-
-        <li>Learn more about HTML, CSS, JavaScript, and C#.</li>
-
-        <li>Graduate from Senior High School with good grades.</li>
-
-        <li>Become more confident in programming.</li>
-
-    </ol>
-
-    <h2>My Daily Routine</h2>
-
-    <p>
-
-        These are some of the activities I usually do every day:
-
-    </p>
-
-    <ol type="I">
-
-        <li>Wake up and prepare for school.</li>
-
-        <li>Attend my classes and participate in lessons.</li>
-
-        <li>Complete my assignments and projects.</li>
-
-        <li>Practice coding or study ICT lessons.</li>
-
-        <li>Relax by playing games, singing, or cooking.</li>
-
-        <li>Sleep early to prepare for the next day.</li>
-
-    </ol>
-
-    <h2>My Countdown to Success</h2>
-
-    <p>
-
-        These are the important goals I want to achieve:
-
-    </p>
-
-    <ol reversed>
-
-        <li>Become a successful programmer.</li>
-
-        <li>Finish college successfully.</li>
-
-        <li>Graduate from Senior High School.</li>
-
-    </ol>
-
-    <h2>My Dream Career</h2>
-
-    <p>
-
-        My dream career is to become a <b>Software Developer</b> or
-
-        <b>Web Developer</b>. I want to create useful websites and applications
-
-        that can help people and make their lives easier.
-
-    </p>
-
-    <h2>Fun Facts About Me</h2>
-
-    <p>
-
-        I love helping others, making a lot of friends, and spending time with
-
-        my family. I also enjoy learning new skills and exploring technology.
-
-    </p>
-
-    <h2>My Personal Motto</h2>
-
-    <p>
-
-        <i>"Success is not about being the best, but about never giving up."</i>
-
-    </p>
-
-    <hr>
-
-    <h2>End of Profile</h2>
-
-    <p>
-
-        Thank you for reading my personal profile!
-
-    </p>
+        });
+    </script>
 
 </body>
 
